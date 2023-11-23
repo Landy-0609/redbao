@@ -1,0 +1,21 @@
+spring:
+  kafka:
+    bootstrap-servers: "192.168.47.141:9092,192.168.47.142:9092,192.168.47.143:9092"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: redpacket-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+  redis:
+    host: 192.168.47.141
+    port: 6379
+    jedis:
+      pool:
+        max-active: 10
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+    password: 123123
